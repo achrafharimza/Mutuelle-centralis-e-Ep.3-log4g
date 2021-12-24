@@ -1,0 +1,53 @@
+[
+  {
+    "firstname": "Ahmed",
+    "password": "1230321",
+    "phone": "+212611221122",
+    "cin": "HH112233",
+    "email": "yc.a.mohammed@gmail.com",
+    "entity": "OMFAM",
+    "lastname": "Mohammed"
+  },
+  {
+    "firstname": "Kamal",
+    "password": "0000001",
+    "phone": "+212633111122",
+    "cin": "HH554433",
+    "email": "yc.a.kamal@gmail.com",
+    "entity": "MGEN",
+    "lastname": "Bouhfid"
+  },
+  {
+    "firstname": "Imane",
+    "password": "22339900",
+    "phone": "+212699991111",
+    "cin": "HH778899",
+    "email": "yc.a.imane@gmail.com",
+    "entity": "MAMT",
+    "lastname": "Alaoui"
+  },
+  { "firstname": "Ahmed", "password": "1230321" },
+  { "firstname": "POM", "password": "OPM" },
+  { "firstname": "AZER", "password": "CVB" },
+  { "firstname": "LPM", "password": "MPN" },
+  { "firstname": "PLOP", "password": "PLOP" },
+  { "firstname": "opmp", "password": "evgre" },
+  { "firstname": "lmpm", "password": "lmp" },
+  { "firstname": "bb", "password": "bnb" },
+  { "firstname": "azefcd", "password": "rvrg" },
+  { "firstname": "kokn", "password": "ijiji" },
+  { "firstname": "lpl", "password": "ert" },
+  { "firstname": "tyu", "password": "ippl" },
+  { "firstname": "lpmmm", "password": "lpmmm" },
+  { "firstname": "aazdokzo", "password": "aazdokzo" },
+  { "firstname": "AAEZ", "password": "AEAE" },
+  { "firstname": "qqq", "password": "efe" },
+  { "firstname": "loloo", "password": "plplp" },
+  { "firstname": "aazsazs", "password": "yuii" },
+  { "firstname": "azzkzo", "password": "lpmm" },
+  { "firstname": "akla", "password": "sasa" },
+  { "firstname": "urvired", "password": "ceihfie" },
+  { "firstname": "qsdd", "password": "qss" },
+  { "firstname": "123", "password": "123" },
+  { "firstname": "aazaa", "password": "dede" }
+]

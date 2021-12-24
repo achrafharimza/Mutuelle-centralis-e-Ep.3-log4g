@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="559.0" prefWidth="821.0" style="-fx-background-color: #A13333;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegisterController">
+   <children>
+      <ImageView fitHeight="254.0" fitWidth="231.0" layoutX="96.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/pngwing.com.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="rootPane" layoutX="429.0" prefHeight="559.0" prefWidth="400.0" style="-fx-background-color: #461111;">
+         <children>
+            <ImageView fitHeight="105.0" fitWidth="200.0" layoutX="163.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Desktop/utilisateur.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="RegisterButton" layoutX="145.0" layoutY="482.0" mnemonicParsing="false" onAction="#RegistreF" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #B3541E;" text="Register" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <TextField fx:id="firstnameText" layoutX="83.0" layoutY="159.0" prefWidth="262.0" promptText="firstname" />
+            <TextField fx:id="lastnameText" layoutX="83.0" layoutY="211.0" prefWidth="262.0" promptText="lastname" />
+            <TextField fx:id="emailText" layoutX="85.0" layoutY="259.0" prefWidth="262.0" promptText="email" />
+            <TextField fx:id="phoneText" layoutX="85.0" layoutY="304.0" prefWidth="262.0" promptText="phone" />
+            <TextField fx:id="cinText" layoutX="85.0" layoutY="345.0" prefWidth="262.0" promptText="cin" />
+            <TextField fx:id="entityText" layoutX="85.0" layoutY="397.0" prefWidth="262.0" promptText="entity" />
+            <TextField fx:id="passwordText" layoutX="85.0" layoutY="443.0" prefWidth="262.0" promptText="Password" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

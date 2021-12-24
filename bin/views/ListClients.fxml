@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="821.0" style="-fx-background-color: #A13333;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ListClientsController">
+   <children>
+      <TableView fx:id="TableofClient" layoutX="7.0" layoutY="110.0" prefHeight="340.0" prefWidth="806.0">
+        <columns>
+          <TableColumn fx:id="Nbadge" prefWidth="69.6000394821167" text="Nbadge" />
+          <TableColumn fx:id="NomEntreprise" prefWidth="105.5999755859375" text="Nom-Entreprise" />
+            <TableColumn fx:id="DateDebut" prefWidth="111.99998474121094" text="Date-Debut" />
+            <TableColumn fx:id="PrenomT" prefWidth="74.39996337890625" text="Prenom" />
+            <TableColumn fx:id="NomT" prefWidth="63.20001220703125" text="Nom" />
+            <TableColumn fx:id="CNIPassportT" prefWidth="88.0" text="CNI/Passport" />
+            <TableColumn fx:id="Phone" prefWidth="81.60003662109375" text="Phone" />
+            <TableColumn fx:id="EmailT" prefWidth="90.39996337890625" text="Email" />
+            <TableColumn fx:id="Adresse" prefWidth="99.20001220703125" text="Adresse" />
+        </columns>
+      </TableView>
+      <Text layoutX="350.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Clients" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Text>
+      <TextField fx:id="filterField" layoutX="33.0" layoutY="64.0" promptText="Search Box" />
+      <Text layoutX="33.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Box" wrappingWidth="107.34884643554688">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="ListeClients" layoutX="43.0" layoutY="510.0" mnemonicParsing="false" onAction="#GoToList" prefHeight="26.0" prefWidth="104.0" style="-fx-background-color: #040303;" text="Liste des clients" textFill="#b3541e" />
+      <Button fx:id="QuitterButton" layoutX="727.0" layoutY="508.0" mnemonicParsing="false" onAction="#Quitter" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #040303;" text="Quitter" textFill="RED">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="ChartButt" layoutX="382.0" layoutY="510.0" mnemonicParsing="false" onAction="#GoToGraphe" prefHeight="26.0" prefWidth="104.0" style="-fx-background-color: #040303;" text="Chart" textFill="#b3541e" />
+      <RadioButton fx:id="Prenom" layoutX="203.0" layoutY="68.0" mnemonicParsing="false" text="Prenom">
+         <toggleGroup>
+            <ToggleGroup fx:id="recherche" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="Nom" layoutX="322.0" layoutY="68.0" mnemonicParsing="false" text="Nom" toggleGroup="$recherche" />
+      <RadioButton fx:id="Email" layoutX="443.0" layoutY="68.0" mnemonicParsing="false" text="Email" toggleGroup="$recherche" />
+      <RadioButton fx:id="IdentificationNum" layoutX="560.0" layoutY="68.0" mnemonicParsing="false" text="CNI/Passport" toggleGroup="$recherche" />
+   </children>
+</AnchorPane>
