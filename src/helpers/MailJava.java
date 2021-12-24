@@ -48,7 +48,7 @@ public class MailJava {
 			properties.put("mail.smtp.starttls.enable", "true");
 		
         String myEmail = "achrafharimza14@gmail.com";
-        String mypassword = "efzhxizppyzynaer";
+        String mypassword = "";
         
         // Get the Session object.// and pass username and password
         Session session = Session.getInstance(properties,new Authenticator() {
@@ -107,7 +107,7 @@ public class MailJava {
 //	public static void SendMail(String recipient) throws Exception {
 //		//authentication info
 //		final String username = "achrafharimza14@gmail.com";
-//		final String password = "efzhxizppyzynaer";
+//		final String password = "";
 //		String fromEmail = "achrafharimza14@gmail.com";
 //		String toEmail = "achrafharimza77@gmail.com";
 //		
