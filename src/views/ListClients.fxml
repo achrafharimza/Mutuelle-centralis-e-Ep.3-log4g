@@ -30,7 +30,7 @@
             <Font name="System Bold" size="23.0" />
          </font>
       </Text>
-      <TextField fx:id="filterField" layoutX="33.0" layoutY="64.0" promptText="Search Box" />
+      <TextField fx:id="filterField" layoutX="33.0" layoutY="64.0" onAction="#filtre" promptText="Search Box" />
       <Text layoutX="33.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Box" wrappingWidth="107.34884643554688">
          <font>
             <Font name="System Bold Italic" size="14.0" />

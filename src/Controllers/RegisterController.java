@@ -16,6 +16,7 @@ import helpers.bcrypt;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -139,6 +140,7 @@ static Logger log = Logger.getLogger(RegisterController.class.getName());
           
         	 Navigations navigations = new Navigations();
 	            navigations.changeScene("Sample"); 
+	            ((Node)(event.getSource())).getScene().getWindow().hide();
 
           
           

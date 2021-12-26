@@ -47,8 +47,8 @@ public class MailJava {
 			properties.put("mail.smtp.auth", "true");
 			properties.put("mail.smtp.starttls.enable", "true");
 		
-        String myEmail = "achrafharimza14@gmail.com";
-        String mypassword = "";
+        String myEmail = "xxxxxxxxxxxxxxxxxxxxxxx";
+        String mypassword = "xxxxxxxxxxxxxxxxxxx";
         
         // Get the Session object.// and pass username and password
         Session session = Session.getInstance(properties,new Authenticator() {
@@ -104,38 +104,6 @@ public class MailJava {
 	
 	/////////////////////////////////////////
 	
-//	public static void SendMail(String recipient) throws Exception {
-//		//authentication info
-//		final String username = "achrafharimza14@gmail.com";
-//		final String password = "";
-//		String fromEmail = "achrafharimza14@gmail.com";
-//		String toEmail = "achrafharimza77@gmail.com";
-//		
-//		Properties properties = new Properties();
-//		properties.put("mail.smtp.auth", "true");
-//		properties.put("mail.smtp.starttls.enable", "true");
-//		properties.put("mail.smtp.host", "smtp.gmail.com");
-//		properties.put("mail.smtp.port", "587");
-//		
-//		Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
-//			protected PasswordAuthentication getPasswordAuthentication() {
-//				return new PasswordAuthentication(username,password);
-//			}
-//		});
-//		//Start our mail message
-//		MimeMessage msg = new MimeMessage(session);
-//		try {
-//			msg.setFrom(new InternetAddress(fromEmail));
-//			msg.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
-//			msg.setSubject("Subject Line");
-//			msg.setText("Email body Line");
-//			
-//			Transport.send(msg);
-//			System.out.println("Sent message");
-//		} catch (MessagingException e) {
-//			e.printStackTrace();
-//		} 
-//	}
 
 	
 	

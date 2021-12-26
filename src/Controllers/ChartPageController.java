@@ -21,6 +21,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.NumberAxis;
@@ -74,24 +75,7 @@ static Logger log = Logger.getLogger(ChartPageController.class.getName());
 		int NbrInscInt = 0;
 			for (int i=1 ;i<13;i++) {
 				int imonth=i;
-//				DBoperation DBoperation =new DBoperation();
-//				ResultSet result =DBoperation.CountmMnth(imonth);
-//				
-//				try {
-//					while(result.next()){
-//						System.out.print(result.getString("CountMonth")+"\n");
-//						String NbrInsc =result.getString("CountMonth")  ;
-//					  NbrInscInt =Integer.parseInt(NbrInsc);
-//						
-//					    }
-//				} catch (SQLException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-				
-				
-//				   Client client= new Client(NumBadge, NomEntreprise, DateDebut, Prenom, Nom, IdentificationNum, Phone, Email, Adresse);
-//			         daoClient daoClient=ClientDaoFactory.getClientDAO("jdbc");
+
 			         
 			         
 				  DAO <ChartClient> ChartClient=DaoFactory.getChartImpl() ;
@@ -136,23 +120,7 @@ static Logger log = Logger.getLogger(ChartPageController.class.getName());
 		 
 		  Navigations navigations = new Navigations();
           navigations.changeScene("ListClients"); 
-	    	
-//	    	System.out.print("toooolist");
-////	    	NavigationController navigation = new NavigationController() {};
-////			navigation.GoToListPage();;
-//
-//	    	
-//	    	System.out.print("toooolist");
-//	    	Stage primaryStage =new Stage();
-//	    	   try {
-//     			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("ListClients.fxml"));
-//     			Scene scene = new Scene(root,821,559);
-//     			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-//     			primaryStage.setScene(scene);
-//     			primaryStage.show();
-//     		} catch(Exception e) {
-//     			e.printStackTrace();
-//     		}
+          ((Node)(event.getSource())).getScene().getWindow().hide();
 	    }
 	    	   
 	    	////////////////////////////////////////   
@@ -161,18 +129,7 @@ static Logger log = Logger.getLogger(ChartPageController.class.getName());
 	    void GoToGraphe(ActionEvent event) {
 	    	  Navigations navigations = new Navigations();
 	            navigations.changeScene("ChartPage"); 
-	    	
-//	    	Stage primaryStage =new Stage();
-//	    	   try {
-//  			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("ChartPage.fxml"));
-//  			Scene scene = new Scene(root,821,559);
-//  			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-//  			primaryStage.setScene(scene);
-//  			primaryStage.show();
-//  		} catch(Exception e) {
-//  			e.printStackTrace();
-//  		}
-	    	
+	            ((Node)(event.getSource())).getScene().getWindow().hide();
 	    
 	    }
 	  	

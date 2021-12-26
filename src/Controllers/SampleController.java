@@ -3,6 +3,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -125,6 +126,7 @@ public class SampleController {
       
 	            Navigations navigations = new Navigations();
 	            navigations.changeScene("Page2"); 
+	            ((Node)(event.getSource())).getScene().getWindow().hide();
 	            
 	        }
 
@@ -147,21 +149,8 @@ public class SampleController {
 			 
 			 Navigations navigations = new Navigations();
 	            navigations.changeScene("Register"); 
-			 
-//	    	   try {
-//	    		   
-//	    			Parent root = FXMLLoader.load(getClass().getResource("Register.fxml"));
-//	    			Stage RegiStage =new Stage();
-//	    			Scene scene = new Scene(root,821,559);
-//	    			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-//	    			RegiStage.setScene(scene);
-//	    			RegiStage.setTitle("Login");
-//	    			RegiStage.show();
-//	    		   
-//
-//      		} catch(Exception e) {
-//      			e.printStackTrace();
-//      		}
+	            
+	            ((Node)(event.getSource())).getScene().getWindow().hide();
 			 
 
 	    	   

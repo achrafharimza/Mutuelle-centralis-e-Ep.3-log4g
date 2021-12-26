@@ -26,6 +26,8 @@ public abstract class DAO <T> {
 	
 	public abstract List<T> afiicher();
 	
+	public abstract List<T> filter(String table ,String searsh);
+	
 	public abstract int  CountmMnth (T obj);
 	
 	

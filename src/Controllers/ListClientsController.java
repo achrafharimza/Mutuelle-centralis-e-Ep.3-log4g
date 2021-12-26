@@ -35,10 +35,11 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import models.Client;
-
+import javafx.event.ActionEvent;
 public class ListClientsController implements Initializable {
 
 	 @FXML
@@ -84,6 +85,9 @@ public class ListClientsController implements Initializable {
 	    
 	    @FXML
 	    private ToggleGroup recherche;
+	    @FXML
+	    private RadioButton Prenom;
+
 	    @FXML
 	    private RadioButton Nom;
 	    @FXML
@@ -192,20 +196,118 @@ static Logger log = Logger.getLogger(ListClientsController.class.getName());
 //		    		});
 		    	 
 		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	
-		    	 
+
 
 		    	 
-		    	           }                     
+		    	           }  
+		///////////////////////
+   	 @FXML
+	    void filtre(ActionEvent  event) {
+   		 System.out.println("hollaa");
+   		 
+			DAO <Client> daoClient=DaoFactory.getClientImpl();
+			String check="";
+			
+	
+	    	if (Prenom.isSelected()) {
+				check = "Prenom";
+				
+			} else if (Nom.isSelected()) {
+				check = "Nom";
+			
+			} else if (Email.isSelected()) {
+				check = "Email";
+				
+			} else if (IdentificationNumt.isSelected()) {
+				check = "IdentificationNum";
+			} else {
+	    		check = "all";
+			}
+	       
+			
+			
+		
+				
+				
+				 ObservableList<Client> listf = FXCollections.observableArrayList(daoClient.filter(check,filterField.getText()));
+				 
+				
+				 log.info("Client list filtre show successfully "); 
+					 
+		          
+				 
+		   
+		    	 PrenomT.setCellValueFactory(new PropertyValueFactory<Client,String>("Prenom"));
+		    	 NomT.setCellValueFactory(new PropertyValueFactory<Client,String>("Nom"));
+		    	 NomEntreprise.setCellValueFactory(new PropertyValueFactory<Client,String>("NomEntreprise"));
+		    	 CNIPassportT.setCellValueFactory(new PropertyValueFactory<Client,String>("CNIPassport"));
+		    	 EmailT.setCellValueFactory(new PropertyValueFactory<Client,String>("Email"));
+		    	 Nbadge.setCellValueFactory(new PropertyValueFactory<Client,String>("Nbadge"));
+		    	 Adresse.setCellValueFactory(new PropertyValueFactory<Client,String>("Adresse"));
+		    	 Phone.setCellValueFactory(new PropertyValueFactory<Client,String>("Phone"));
+		    	 DateDebut.setCellValueFactory(new PropertyValueFactory<Client,String>("DateDebut"));
+		    	
+		    	 TableofClient.setItems(listf);
+   		 
+   		 
+   		 
+   		 
+   		 
+   		 
+   		 
+
+	    }
+	 
+//	 
+//	  @FXML
+//	    void filtre(KeyEvent  event) {
+//	    	ClientDao clientDAO=ClientDaoFactory.getClientDAO("jdbc");	
+//	    	String check="";
+//	    	if (f_entreprise.isSelected()) {
+//				check = "nom_entreprise";
+//			} else if (f_cin.isSelected()) {
+//				check = "cin";
+//			} else if (f_nom.isSelected()) {
+//				check = "nom";
+//			} else if (f_prenom.isSelected()) {
+//				check = "prenom";
+//			} else if (f_email.isSelected()) {
+//				check = "email";
+//			} else {
+//	    		check = "all";
+//			}
+//			ObservableList<Client> list = FXCollections.observableArrayList(clientDAO.rechercher(Recherche.getText(), check));
+//			//clientDAO.afficher();	
+//			Tbadge.setCellValueFactory(new PropertyValueFactory<Client,String>("nbadge"));
+//			Tentreprise.setCellValueFactory(new PropertyValueFactory<Client,String>("nom_entreprise"));
+//			Tdate.setCellValueFactory(new PropertyValueFactory<Client,Date>("date_debut"));
+//			Tprenom.setCellValueFactory(new PropertyValueFactory<Client,String>("prenom"));
+//	    	 Tnom.setCellValueFactory(new PropertyValueFactory<Client,String>("nom"));
+//	    	 Tcin.setCellValueFactory(new PropertyValueFactory<Client,String>("cin"));
+//	    	 Tpassport.setCellValueFactory(new PropertyValueFactory<Client,String>("passport"));
+//	    	 Ttelephone.setCellValueFactory(new PropertyValueFactory<Client,String>("telephone"));
+//	    	 Temail.setCellValueFactory(new PropertyValueFactory<Client,String>("email"));		
+//	    	 Tadresse.setCellValueFactory(new PropertyValueFactory<Client,String>("adresse"));
+//			 
+//	    	 Ttable.setItems(list);
+//	    }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+///////////////////////////////  	 
+		
+		
+		
+		
+		
+		
+		/////////////////
 		  
 		 @FXML
 		    void GoToList(ActionEvent event) {

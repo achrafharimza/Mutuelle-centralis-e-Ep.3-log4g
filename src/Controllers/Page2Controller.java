@@ -32,6 +32,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.print.Printer;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -293,6 +294,7 @@ static Logger log = Logger.getLogger(Page2Controller.class.getName());
 	    	
 	    	 Navigations navigations = new Navigations();
 	            navigations.changeScene("ListClients"); 
+	            ((Node)(event.getSource())).getScene().getWindow().hide();
 
 	    }
 	    	   
@@ -303,6 +305,7 @@ static Logger log = Logger.getLogger(Page2Controller.class.getName());
 	    	
 	    	 Navigations navigations = new Navigations();
 	            navigations.changeScene("ChartPage"); 
+	            ((Node)(event.getSource())).getScene().getWindow().hide();
 	    	
 
 	    

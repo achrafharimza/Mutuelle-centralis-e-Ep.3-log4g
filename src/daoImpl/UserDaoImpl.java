@@ -98,6 +98,13 @@ static Logger log = Logger.getLogger(UserDaoImpl.class.getName());
 	}
 
 
+	@Override
+	public List<User> filter(String table, String searsh) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 
 
 	
