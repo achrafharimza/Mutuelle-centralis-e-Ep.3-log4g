@@ -26,6 +26,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -138,62 +139,7 @@ static Logger log = Logger.getLogger(ListClientsController.class.getName());
 		    	 TableofClient.setItems(list);
 		    	
 		    	 //////////////////////////////////
-		    	 
-		    	 
-		    	 
-//		    		filterField.textProperty().addListener((observable, oldValue, newValue) -> {
-//		    			if (newValue != null || !(newValue.isEmpty())) {
-//		    				
-//		    			
-//		    			String searchstring =newValue.toLowerCase();
-//		    			 RadioButton selectedRadioButton=(RadioButton) recherche.getSelectedToggle();
-//		    			  
-//		    				String	FilterS =selectedRadioButton.getText();
-//		    				
-//		    			
-//		    			 
-//		    			
-//		    			try {
-//		    				
-//		    				
-//		    				DataBConnect DataBConnect =new DataBConnect();
-//		    				Connection connection =DataBConnect.getConnection();
-//		    			
-//		    				System.out.println("fffffffffffffff");
-//		    				System.out.println(FilterS);
-//		    				ResultSet result2 = connection.createStatement().executeQuery("SELECT * FROM breif.clients where "+ FilterS +" LIKE '%"+searchstring+"%'");
-//		    				
-//		    				 
-//		    				ObservableList<Client> listF = FXCollections.observableArrayList();
-//		    				 while (result2.next()){
-//		    					 listF.add(new Client(
-//		    							 
-//		    							 result2.getString("NumBadge"),
-//		    							 result2.getString("NomEntreprise"),
-//		    							 result2.getString("DateDebut"),
-//		    							 
-//		    							 result2.getString("Prenom"),
-//		    							 result2.getString("Nom"),
-//		    							 result2.getString("IdentificationNum"),
-//		    							 result2.getString("Phone"),
-//		    							 result2.getString("Email"),
-//		    							 result2.getString("Adresse")));
-//		    					 TableofClient.setItems(listF);
-//		    					 
-//		    		            }
-//		    				
-//		    				
-//		    				
-//		    				
-//		    			} catch (Exception e) {
-//		    				// TODO: handle exception
-//		    			}
-//		    			
-//		    			}
-//		    			
-//		    			
-//		    			
-//		    		});
+
 		    	 
 		    	 
 
@@ -258,45 +204,7 @@ static Logger log = Logger.getLogger(ListClientsController.class.getName());
 
 	    }
 	 
-//	 
-//	  @FXML
-//	    void filtre(KeyEvent  event) {
-//	    	ClientDao clientDAO=ClientDaoFactory.getClientDAO("jdbc");	
-//	    	String check="";
-//	    	if (f_entreprise.isSelected()) {
-//				check = "nom_entreprise";
-//			} else if (f_cin.isSelected()) {
-//				check = "cin";
-//			} else if (f_nom.isSelected()) {
-//				check = "nom";
-//			} else if (f_prenom.isSelected()) {
-//				check = "prenom";
-//			} else if (f_email.isSelected()) {
-//				check = "email";
-//			} else {
-//	    		check = "all";
-//			}
-//			ObservableList<Client> list = FXCollections.observableArrayList(clientDAO.rechercher(Recherche.getText(), check));
-//			//clientDAO.afficher();	
-//			Tbadge.setCellValueFactory(new PropertyValueFactory<Client,String>("nbadge"));
-//			Tentreprise.setCellValueFactory(new PropertyValueFactory<Client,String>("nom_entreprise"));
-//			Tdate.setCellValueFactory(new PropertyValueFactory<Client,Date>("date_debut"));
-//			Tprenom.setCellValueFactory(new PropertyValueFactory<Client,String>("prenom"));
-//	    	 Tnom.setCellValueFactory(new PropertyValueFactory<Client,String>("nom"));
-//	    	 Tcin.setCellValueFactory(new PropertyValueFactory<Client,String>("cin"));
-//	    	 Tpassport.setCellValueFactory(new PropertyValueFactory<Client,String>("passport"));
-//	    	 Ttelephone.setCellValueFactory(new PropertyValueFactory<Client,String>("telephone"));
-//	    	 Temail.setCellValueFactory(new PropertyValueFactory<Client,String>("email"));		
-//	    	 Tadresse.setCellValueFactory(new PropertyValueFactory<Client,String>("adresse"));
-//			 
-//	    	 Ttable.setItems(list);
-//	    }
-	 
-	 
-	 
-	 
-	 
-	 
+
 	 
 	 
 	 
@@ -314,23 +222,8 @@ static Logger log = Logger.getLogger(ListClientsController.class.getName());
 		    	
 			  Navigations navigations = new Navigations();
 	            navigations.changeScene("ListClients"); 
-			 
-//		    	System.out.print("toooolist");
-////		    	NavigationController navigation = new NavigationController() {};
-////				navigation.GoToListPage();;
-//
-//		    	
-//		    	System.out.print("toooolist");
-//		    	Stage primaryStage =new Stage();
-//		    	   try {
-//	     			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("ListClients.fxml"));
-//	     			Scene scene = new Scene(root,821,559);
-//	     			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-//	     			primaryStage.setScene(scene);
-//	     			primaryStage.show();
-//	     		} catch(Exception e) {
-//	     			e.printStackTrace();
-//	     		}
+	            ((Node)(event.getSource())).getScene().getWindow().hide();
+
 		    }
 		    	   
 		    	////////////////////////////////////////   
@@ -339,18 +232,9 @@ static Logger log = Logger.getLogger(ListClientsController.class.getName());
 		    void GoToGraphe(ActionEvent event) {
 		    	 Navigations navigations = new Navigations();
 		            navigations.changeScene("ChartPage"); 
+		            ((Node)(event.getSource())).getScene().getWindow().hide();
 //		    	
-//		    	Stage primaryStage =new Stage();
-//		    	   try {
-//	  			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("ChartPage.fxml"));
-//	  			Scene scene = new Scene(root,821,559);
-//	  			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-//	  			primaryStage.setScene(scene);
-//	  			primaryStage.show();
-//	  		} catch(Exception e) {
-//	  			e.printStackTrace();
-//	  		}
-//		    	
+
 		    
 		    }
 		  	

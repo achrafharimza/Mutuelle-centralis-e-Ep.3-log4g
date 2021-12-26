@@ -24,6 +24,7 @@ import DAO.daoUser;
 import factory.DaoFactory;
 
 import helpers.Navigations;
+import helpers.PopUp;
 import helpers.bcrypt;
 
 import javafx.application.Platform;
@@ -175,47 +176,47 @@ static Logger log = Logger.getLogger(Page2Controller.class.getName());
 	         
 	     	
 	    	 if (PrénomC.getText().length() > 50 || PrénomC.getText().isEmpty() ) {
-		            showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Prénom Should not empty ");
+		            PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Prénom Should not empty ");
 		            PrénomC.setText("");
 		            return;
 		        }
 	    	 if (AdresseC.getText().isEmpty()  ) {
-		            showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Adresse Should not empty ");
+		            PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Adresse Should not empty ");
 		            AdresseC.setText("");
 		            return;
 		        }
 	    	 if (EmailC.getText().isEmpty()|| !Memail.matches()  ) {
-		            showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Please enter a Valid email ");
+		            PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Please enter a Valid email ");
 		            EmailC.setText("");
 		            return;
 		        }
 	    	 if (DateDébut.getValue()== null ) {
-		            showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Adresse Should not Date de Début ");
+		            PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Adresse Should not Date de Début ");
 		            DateDébut.setValue(null);
 		            return;
 		        }
 	    	 
 	    	 if (PhoneC.getText().isEmpty() || PhoneC.getLength() < 9 || !Mphone.matches()) {
-		            showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Please enter a Valid Phone number ");
+		            PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Please enter a Valid Phone number ");
 		            PhoneC.setText("");
 		            return;
 		        }
 	    	 
 	    	 
 	    	 if (NomEntrepriseC.getText().isEmpty() ||(NomEntrepriseC.getText().length() > 10  ) ){
-		            showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Nom Entreprise  Should not empty");
+		            PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Nom Entreprise  Should not empty");
 		            NomEntrepriseC.setText("");
 		            return;
 		        }
 	         
 	    	 if (Nbadge.getText().isEmpty() ||Nbadge.getText().length() > 10 ) {
-		            showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Num badge Should not empty ");
+		            PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Num badge Should not empty ");
 		            Nbadge.setText("");
 		            return;
 		        }
 	         
 	    	 if (NomC.getText().length() > 50 || NomC.getText().isEmpty() ) {
-		            showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Nom Should not empty ");
+		            PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Nom Should not empty ");
 		            NomC.setText("");
 		            return;
 		        }
@@ -223,23 +224,23 @@ static Logger log = Logger.getLogger(Page2Controller.class.getName());
 	    	 RadioButton selectedRadioButton=(RadioButton) Identification.getSelectedToggle();
 	         
 	         if (selectedRadioButton ==null) {
-	        	 showAlert(Alert.AlertType.ERROR, owner, "Form Error!","*type of identification should be selected ");
+	        	 PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","*type of identification should be selected ");
 		           
 		            return; 
 	         }
 	         if (IdentificationNumCP.getText().isEmpty()  ) {
-		            showAlert(Alert.AlertType.ERROR, owner, "Form Error!","CIN/Passeport Should not empty ");
+		            PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","CIN/Passeport Should not empty ");
 		            
 		            return;
 		        }
 	    	 
 	         if (selectedRadioButton.getText().equals("CIN") &&  !Mcni.matches())  {
-		            showAlert(Alert.AlertType.ERROR, owner, "Form Error!","CIN should containe two alphabit and 6 digit");
+		            PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","CIN should containe two alphabit and 6 digit");
 		            IdentificationNumCP.setText("");
 		            return;
 		        }
 	         if (selectedRadioButton.getText().equals("Passeport") &&  !Mpassport.matches())  {
-		            showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Passeport should containe two alphabit and 7 digit");
+		            PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Passeport should containe two alphabit and 7 digit");
 		            IdentificationNumCP.setText("");
 		            return;
 		        }
@@ -274,11 +275,11 @@ static Logger log = Logger.getLogger(Page2Controller.class.getName());
 	         
 	         
 	         if (flag==1) {
-	        	 infoBox("saving Successful!", null, "Failed");
+	        	 PopUp.infoBox("saving Successful!", null, "Accomplished");
 	        	 log.info("Client added successfully ");
 	     		
 	 		} else {
-	 			infoBox("error!!data NOT save", null, "Failed");
+	 			PopUp.infoBox("error!!data NOT save", null, "Failed");
 	 			log.warn("Client added failed");
 	 		}
 	         
@@ -358,22 +359,7 @@ static Logger log = Logger.getLogger(Page2Controller.class.getName());
 			
 		}
 
-		  private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
-		        Alert alert = new Alert(alertType);
-		        alert.setTitle(title);
-		        alert.setHeaderText(null);
-		        alert.setContentText(message);
-		        alert.initOwner(owner);
-		        alert.show();
-		    }
-		    ///////////////////////
-			public static void infoBox(String infoMessage, String headerText, String title) {
-		        Alert alert = new Alert(AlertType.CONFIRMATION);
-		        alert.setContentText(infoMessage);
-		        alert.setTitle(title);
-		        alert.setHeaderText(headerText);
-		        alert.showAndWait();
-		    }
+	
 	
 
 }

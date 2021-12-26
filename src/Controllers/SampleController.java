@@ -48,7 +48,7 @@ import helpers.Navigations;
 import helpers.bcrypt;
 import helpers.log4jExample;
 
-
+import helpers.PopUp;
 
 
 
@@ -90,7 +90,7 @@ public class SampleController {
 			Window owner = loginButton.getScene().getWindow();
 	    	
 		    if (emailText.getText().isEmpty()|| !Memail.matches()) {
-	            showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Please enter a Valid email ");
+		    	PopUp.showAlert(Alert.AlertType.ERROR, owner, "Form Error!","Please enter a Valid email ");
 	            return;
 	        }
 	         
@@ -113,14 +113,14 @@ public class SampleController {
 
 
 	        if (!flag) {
-	            infoBox("Please enter correct Email and Password", null, "Failed");
+	        	PopUp.infoBox("Please enter correct Email and Password", null, "Failed");
 	            
 	           log.warn("authentication failed");
 	           
 	            
 	            
 	        } else {
-	            infoBox("Login Successful!", null, "Failed");
+	        	PopUp.infoBox("Login Successful!", null, "Accomplished");
 	            log.info("authentication passed correctly");
 	            ///// move ton next page 
       
@@ -166,54 +166,6 @@ public class SampleController {
 	
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-///////////////////////
-		public static void infoBox(String infoMessage, String headerText, String title) {
-	        Alert alert = new Alert(AlertType.CONFIRMATION);
-	        alert.setContentText(infoMessage);
-	        alert.setTitle(title);
-	        alert.setHeaderText(headerText);
-	        alert.showAndWait();
-	    }
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		//////////////////////////////////////////
-		
-		 private static void showAlert(Alert.AlertType alertType, Window owner, String title, String message) {
-		        Alert alert = new Alert(alertType);
-		        alert.setTitle(title);
-		        alert.setHeaderText(null);
-		        alert.setContentText(message);
-		        alert.initOwner(owner);
-		        alert.show();
-		    }
-		
-		
 		
 		
 		
